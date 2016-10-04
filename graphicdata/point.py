@@ -12,7 +12,7 @@ class Point(object):
     """
     This is basic part of my world of graphic
     """
-    def __init__(self, x, y, z, angle=-90):
+    def __init__(self, x, y, z, angle=-30):
         self.x = x
         self.y = y
         self.z = z

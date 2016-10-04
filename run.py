@@ -43,25 +43,30 @@ def draw_coordinate_lines(screen):
     yL.render(screen)
     zL.render(screen)
 
+
 if __name__ == "__main__":
     pygame.init()
     screen = pygame.display.set_mode((sc_w, sc_h))
     screen.fill((255, 255, 255))
     setup_coordinate_lines()
 
-    prism = FivePointPrism(200, 200, 0)
+    prism = FivePointPrismLine(200, 200, 0)
     prism2 = FivePointPrism(400, 200, 0)
     prism3 = FivePointPrism(300, 400, 0)
+
     while True:
         screen.fill((255, 255, 255))
         draw_coordinate_lines(screen)
         prism.render(screen)
         prism2.render(screen)
         prism3.render(screen)
-        prism.rotate_y(5)
         prism2.rotate_x(5)
         prism3.rotate_z(5)
+        # prism.rotate_y(5)
         for event in pygame.event.get():
+            # if event.type == pygame.KEYDOWN:
+            #     if event.key == pygame.K_SPACE:
+            #         prism.rotate_y(5)
             if event.type == pygame.QUIT:
                 sys.exit()
 

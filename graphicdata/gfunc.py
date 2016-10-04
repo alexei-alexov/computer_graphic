@@ -27,8 +27,8 @@ def multiply(point, matrix):
 
 
 def draw_dashed_line(screen, color, start, end):
-    dx = start[0] - end[0]
-    dy = start[1] - end[1]
+    dx = - start[0] + end[0]
+    dy = - start[1] + end[1]
     length = int(sqrt(dx*dx + dy*dy))
     if length != 0:
         slope_x = dx / length
