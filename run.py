@@ -50,25 +50,27 @@ if __name__ == "__main__":
     screen.fill((255, 255, 255))
     setup_coordinate_lines()
 
-    prism = FivePointPrismLine(200, 200, 0)
+    prism = FivePointPrismFilled(200, 200, 0)
     prism2 = FivePointPrism(400, 200, 0)
     prism3 = FivePointPrism(300, 400, 0)
 
     while True:
         screen.fill((255, 255, 255))
         draw_coordinate_lines(screen)
+        # prism2.rotate_x(45)
+        # prism3.rotate_z(45)
+        prism.rotate_y(1)
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_5:
+                    prism.rotate_y(5)
+                elif event.key == pygame.K_1:
+                    prism.rotate_y(1)
+                print prism.angle
+            if event.type == pygame.QUIT:
+                sys.exit()
         prism.render(screen)
         prism2.render(screen)
         prism3.render(screen)
-        prism2.rotate_x(5)
-        prism3.rotate_z(5)
-        # prism.rotate_y(5)
-        for event in pygame.event.get():
-            # if event.type == pygame.KEYDOWN:
-            #     if event.key == pygame.K_SPACE:
-            #         prism.rotate_y(5)
-            if event.type == pygame.QUIT:
-                sys.exit()
-
         pygame.display.flip()
         time.sleep(0.1)

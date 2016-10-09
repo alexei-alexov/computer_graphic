@@ -52,19 +52,13 @@ class FivePointPrism(object):
             poly.render(screen)
 
     def rotate_x(self, deg):
-        for point in self.bottom_base:
-            point.rotate_x(self.x, self.y, self.z, deg)
-        for point in self.top_base:
-            point.rotate_x(self.x, self.y, self.z, deg)
+        for poly in self.polygons:
+            poly.rotate_x(self.x, self.y, self.z, deg)
 
     def rotate_y(self, deg):
-        for point in self.bottom_base:
-            point.rotate_y(self.x, self.y, self.z, deg)
-        for point in self.top_base:
-            point.rotate_y(self.x, self.y, self.z, deg)
+        for poly in self.polygons:
+            poly.rotate_y(self.x, self.y, self.z, deg)
 
     def rotate_z(self, deg):
-        for point in self.bottom_base:
-            point.rotate_z(self.x, self.y, self.z, deg)
-        for point in self.top_base:
-            point.rotate_z(self.x, self.y, self.z, deg)
+        for poly in self.polygons:
+            poly.rotate_z(self.x, self.y, self.z, deg)
