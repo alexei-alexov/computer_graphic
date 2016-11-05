@@ -14,8 +14,8 @@ class Utiler(object):
     """
     SW = 100
     SH = 800
-    ZOOM = 200
-    E = 0.01
+    ZOOM = 500
+    E = 0.001
     CX = SW / 2
     CY = SH / 4 * 3
     COLOR = (255, 255, 255)
@@ -96,7 +96,7 @@ class FunctionDrawer(object):
                     self.width)
 
             except Exception, error:
-                print error
+                pass
         pygame.display.flip()
 
 
@@ -167,17 +167,17 @@ if __name__ == "__main__":
     def func4_y(t):
         return 110 * sin(t) - 5 * sin(11 * t)
 
-    f1 = FunctionDrawer(func1, width=2)
-    f1.draw(screen, utiler, -500, 500)
-    f2 = FunctionDrawer(func2, (0, 255, 0))
-    f2.draw(screen, utiler, -500, 500)
+    # f1 = FunctionDrawer(func1, width=2)
+    # f1.draw(screen, utiler, -500, 500)
+    # f2 = FunctionDrawer(func2, (0, 255, 0))
+    # f2.draw(screen, utiler, -500, 500)
 
-    # 6.28
-    # polar system
-    f3 = FunctionDrawerPolar(func3, (100, 150, 255))
-    f3.draw(screen, utiler, 0, 6.28)
-    # parametrised
-    f4 = FunctionDrawerParametrised(func4_x, func4_y, (100, 255, 150))
+    # # 6.28
+    # # polar system
+    # f3 = FunctionDrawerPolar(func3, (255, 255, 255))
+    # f3.draw(screen, utiler, 0, 6.28)
+    # # parametrised
+    f4 = FunctionDrawerParametrised(func4_x, func4_y, (255, 255, 255))
     f4.draw(screen, utiler, 0, 6.28)
 
     while True:
