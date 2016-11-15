@@ -5,9 +5,10 @@ from point import Point
 
 class Polygon(object):
 
-    def __init__(self, points, visible=True, color_fill=None):
+    def __init__(self, points, visible=True, color_fill=None, color_line=None):
         self.points = points
         self.color = color_fill
+        self.line_color = color_line
         self.rotated = False
         self.visible = visible
         self._make_raw_points()

@@ -165,10 +165,13 @@ if __name__ == "__main__":
 
     base_table = [[1.5, 80], [1.9, 136], [2.3, 70], [2.7, 165], [3.1, 102]]
     intr = Splinner()
+    f3 = FunctionDrawerTable(base_table, (0, 255, 0))
     f2 = FunctionDrawerTable(intr.interpolate(base_table), (255, 0, 0))
-    f = FunctionDrawerTable(table, (255, 255, 255))
-    f.draw(screen, utiler)
+    # f = FunctionDrawerTable(table, (255, 255, 255))
+    # f.draw(screen, utiler)
+    f3.draw(screen, utiler)
     f2.draw(screen, utiler)
+
     pygame.draw.line(screen, (255, 255, 150), (utiler.CX, utiler.CY), (utiler.CX + 10, utiler.CY), 1)
     pygame.display.flip()
     while True:

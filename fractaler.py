@@ -96,7 +96,7 @@ if __name__ == "__main__":
     pygame.init()
     screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
-    dragon = DragonDrawer(screen, 15, (255, 255, 255))
+    dragon = DragonDrawer(screen, 10, (255, 255, 255))
     dragon.draw(500, 300, 800, 600)
     while True:
         for event in pygame.event.get():
